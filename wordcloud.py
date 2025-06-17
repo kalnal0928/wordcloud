@@ -62,6 +62,10 @@ def read_text_file(filename):
         print(f"{filename}에서 텍스트를 성공적으로 읽었습니다.")
         return text
 
+    except FileNotFoundError:
+        print(f"파일 {filename}을(를) 찾을 수 없습니다.")
+        print("현재 폴더에 파일이 있는지 확인해주세요.")
+        
     except Exception as e:
-        print(f"Error reading {filename}: {e}")
+        print(f"파일 {filename} 파일을 읽는 중 오류가 발생했습니다: {e}")
         return None
