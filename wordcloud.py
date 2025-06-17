@@ -54,5 +54,14 @@ def  make_wordcloud(text):
     
     return wordcloud, df_counts
     
-    
-    
+def read_text_file(filename):
+    try:
+        with open(filename, 'r', encoding='utf-8') as file:
+            text = file.read()
+
+        print(f"{filename}에서 텍스트를 성공적으로 읽었습니다.")
+        return text
+
+    except Exception as e:
+        print(f"Error reading {filename}: {e}")
+        return None
